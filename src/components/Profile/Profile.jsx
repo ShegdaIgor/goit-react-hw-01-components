@@ -11,7 +11,7 @@ export const Profile = ({
   likes,
 }) => {
   return (
-    <div className={css.profile}>
+    <div key={username} className={css.profile}>
       <div className={css.description}>
         <img src={avatar} alt="User avatar" className={css.avatar} />
         <p className={css.name}>{username}</p>
@@ -38,10 +38,10 @@ export const Profile = ({
 };
 
 Profile.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  views: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
 };

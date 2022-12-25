@@ -1,10 +1,14 @@
 import css from 'components/App.module.css';
+
 import { Profile } from './Profile/Profile.jsx';
-import user from './info/user.json';
 import { Statistics } from './Statistics/Statistics';
-import data from '../components/info/data.json';
 import { FriendsList } from './FriendsList/FriendsList.jsx';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+
+import user from './info/user.json';
+import data from '../components/info/data.json';
 import friends from '../components/info/friends.json';
+import transactions from '../components/info/transactions.json';
 
 export const App = () => {
   return (
@@ -18,9 +22,10 @@ export const App = () => {
         views={user.stats.views}
         likes={user.stats.likes}
       />
-
       <Statistics title="Upload stats" stats={data} />
+      {/* <Statistics stats={data} /> */}
       <FriendsList friends={friends} />
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
